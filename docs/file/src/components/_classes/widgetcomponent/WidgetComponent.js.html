@@ -204,6 +204,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getPropertyValue">getPropertyValue</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getRandomComponentId">getRandomComponentId</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-guid">guid</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isInputComponent">isInputComponent</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isMongoId">isMongoId</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isValidDate">isValidDate</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-iterateKey">iterateKey</a></span></span></li>
@@ -267,11 +268,11 @@ export default class WidgetComponent extends Input {
     return super.isEmpty(value);
   }
 
-  setCustomValidity(message, dirty) {
+  setCustomValidity(message, dirty, external) {
     if (this.widget &amp;&amp; this.widget.toggleInvalidClassForWidget) {
       this.widget.toggleInvalidClassForWidget(message);
     }
-    return super.setCustomValidity(message, dirty);
+    return super.setCustomValidity(message, dirty, external);
   }
 
   setValue(value, flags) {
